@@ -10,9 +10,9 @@ import { colors } from '../utils/colors';
 const ONE_SECOND_IN_MS = 1000;
 
 const PATTERN = [
-  1 * ONE_SECOND_IN_MS,
-  1 * ONE_SECOND_IN_MS,
-  1 * ONE_SECOND_IN_MS
+  ONE_SECOND_IN_MS,
+  ONE_SECOND_IN_MS,
+  ONE_SECOND_IN_MS
 ];
 
 export const Timer = ({ focusSubject, clearSubject, onTimerEnd }) => {
@@ -21,7 +21,7 @@ export const Timer = ({ focusSubject, clearSubject, onTimerEnd }) => {
   const [minutes, setMinutes] = useState(0.1);
   const onEnd = (reset) => {
     Vibration.vibrate(PATTERN);
-    setIsStarted(false),
+    setIsStarted(false);
     setProgress(1);
     reset();
     onTimerEnd(focusSubject)
